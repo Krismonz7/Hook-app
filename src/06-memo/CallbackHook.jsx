@@ -1,7 +1,6 @@
 import React, { useState , useCallback } from 'react';
 import { ShowIncrement } from './ShowIncrement';
 
-useCallback
 
 export const CallbackHook = () => {
 

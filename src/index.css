@@ -8,7 +8,7 @@ body{
 .counterApp{
     display: flex;
     flex-direction: column;
-    border: 2px solid wheat;
+    border: 2px solid rgb(255, 255, 255);
     margin: 10vh auto;
     text-align: center;
     justify-content: center;
