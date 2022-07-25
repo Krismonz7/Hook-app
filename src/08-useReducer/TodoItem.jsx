@@ -4,7 +4,6 @@ export const TodoItem = ({element,onDeleteTodo,onToggleTodo}) => {
 
   return (
 
-
     <li className='list-group-item d-flex justify-content-between'>
     <span
     className={`align-self-center ${element.done ? 'text-decoration-line-through' : ''}`}
