@@ -36,11 +36,13 @@ export const useTodo = () => {
         type:'[TODO] Check Todo',
         payload: todoId
       }
-      console.log(dispatch(action));
+      dispatch(action)
     }
 
 
   return {
+    todosCount:todos.length,
+    pendingTodosCount:todos.filter( Object => !Object.done).length,
     handleDeleteTodo,
     handleNewTodo,
     handleToggleTodo,

@@ -18,11 +18,11 @@ export const TodoApp = () => {
   const init = ()=>{
     return JSON.parse(localStorage.getItem('todos')) || [];
     }
-     const {handleDeleteTodo,handleToggleTodo,handleNewTodo,todos} = useTodo();
+     const {pendingTodosCount,todosCount,handleDeleteTodo,handleToggleTodo,handleNewTodo,todos} = useTodo();
     
     return (
       <div>
-      <h1>TodoApp: {todos.length} <small>pendientes : {todos.filter( Object => !Object.done).length}</small></h1>
+      <h1>TodoApp: {todosCount} <small>pendientes : {pendingTodosCount}</small></h1>
 
       <div className="row">
 
