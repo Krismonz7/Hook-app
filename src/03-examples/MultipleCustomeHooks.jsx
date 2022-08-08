@@ -15,7 +15,7 @@ export const MultipleCustomeHooks = () => {
     console.log(author,quote);
 
   return (
-    <>
+    <> 
       
       MultipleCustomeHooks
 

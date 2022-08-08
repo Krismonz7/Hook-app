@@ -17,7 +17,7 @@ export const Quote = ({quote , author , counter}) => {
     setBoxSize({width:width,height:height})
     console.log(boxSize)
     return()=>{
-      console.log('Cerrado')
+      console.log('Cerrado useLayout effect componente Quote')
     }
   }, [quote])
 
