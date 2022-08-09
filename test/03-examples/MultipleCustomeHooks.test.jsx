@@ -1,9 +1,21 @@
-import { fireEvent, render , screen } from "@testing-library/react";
+import { fireEvent, render , renderHook, screen } from "@testing-library/react";
 import { MultipleCustomeHooks } from "../../src/03-examples";
 import { useCounter, useFetch } from "../../src/hooks";
 jest.mock('../../src/hooks/useFetch');
+jest.mock('../../src/hooks/useCounter');
 
 describe('Pruebas en MultipleCustomeHooks', () => { 
+
+    const mockIncrement= jest.fn();
+
+    useCounter.mockReturnValue({
+        counter:1,
+        increment: mockIncrement,
+    })
+
+    beforeEach(()=>{
+        jest.clearAllMocks();
+    })
 
     test('1. Debe de mostrar el componente por defecto', () => {
 
@@ -44,22 +56,16 @@ describe('Pruebas en MultipleCustomeHooks', () => {
 
       test('Debe de mandar la fc=uncion de implementar', () => { 
 
-        useFetch.mockReturnValue({
-            data: [{author: 'Fernando', quote:'Hola mundo'}],
-            isLoading: false,
-            hasError: null
-        });
-
         render(<MultipleCustomeHooks/>);
 
         
         const nextButton =  screen.getByRole('button',{name:'Siguiente frase'});
         
-        fireEvent.click(nextButton)
+        fireEvent.click(nextButton);
         
         screen.debug();
 
-        //expect(useCounter).toHaveBeenCalled();
+        expect(mockIncrement).toHaveBeenCalled();
        })
 
  })
