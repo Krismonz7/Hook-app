@@ -31,9 +31,9 @@ describe('Pruebas en MultipleCustomeHooks', () => {
 
         expect(screen.getByText('Loading.......'));
 
-        const nextButton = (screen.getByRole('button',{name:'Siguiente frase'}))
+        const nextButton = (screen.getByRole('button',{name:'Siguiente frase'}));
         
-        expect(nextButton.disabled).toBeTruthy()
+        expect(nextButton.disabled).toBeTruthy();
 
      });
 
