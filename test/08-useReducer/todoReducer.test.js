@@ -81,6 +81,40 @@ describe('Pruebas en reducer todoReducer.js', () => {
 
             expect(newState[0].done).toBeTruthy();
 
-         });
+        });
+
+
+
+        //Solucion del instructor
+
+        test('5. Debe eliminar un TODO', () => { 
+
+            const action = {
+                type:'[TODO] Remove Todo',
+                payload:1
+            };
+
+            const newState = todoReducer(initialState,action);
+
+            expect(newState.length).toBe(1);
+
+        });
+
+        test('6. Debe hacer el toggle del TODO', () => { 
+
+            const actionToggle = {
+                type:'[TODO] Check Todo',
+                payload:1
+            };
+
+            const newState = todoReducer(initialState,actionToggle);
+
+            expect(newState[0].done).toBeTruthy();
+
+            const newState2 =  todoReducer(newState,actionToggle);
+
+            expect(newState2[0].done).toBeFalsy();
+
+        });
 
  })
