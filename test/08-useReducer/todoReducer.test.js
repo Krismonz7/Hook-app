@@ -62,8 +62,6 @@ describe('Pruebas en reducer todoReducer.js', () => {
 
             const newState = todoReducer(initialState,actionRemove);
 
-            console.log(newState)
-
             expect(newState.length).toBe(1);
         });
 
@@ -76,8 +74,6 @@ describe('Pruebas en reducer todoReducer.js', () => {
             };
 
             const newState = todoReducer(initialState,actionToggle);
-
-            console.log(newState)
 
             expect(newState[0].done).toBeTruthy();
 
