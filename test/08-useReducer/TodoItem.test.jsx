@@ -69,13 +69,20 @@ describe('Pruebas en Todo Item Component ', () => {
 
         screen.debug();
 
-        expect(onToggleTodoMock).toHaveBeenCalledWith(todo.id);
+        expect(onToggleTodoMock).toHaveBeenCalledWith(todo.id); 
 
      });
 
      test('4. debe de llamar el delete todo con el button', () => { 
 
-        console.log('ok')
+        render(<TodoItem element={todo} onDeleteTodo={onDeleteTodoMock} onToggleTodo={onToggleTodoMock}/>);
+
+        const removeButton = screen.getByRole("button");
+
+        fireEvent.click(removeButton);
+
+        expect(onDeleteTodoMock).toHaveBeenCalledWith(todo.id);
+
      });
 
 });
