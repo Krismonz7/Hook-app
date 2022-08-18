@@ -6,14 +6,12 @@ export const LoginPage = () => {
 
   const {user,setUser} = useContext(UserContext);
 
-    console.log(user);
-
   return (
     <div>
 
       <h1>LoginPage</h1>
 
-  <pre>
+  <pre aria-label='pre'>
     {JSON.stringify(user,null,3)}
   </pre>
 
